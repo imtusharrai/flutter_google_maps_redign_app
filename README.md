@@ -2,4 +2,4 @@
 
 Flutter Google Maps Redesign
 
-![Flutter Google Maps Redesign](sgoogle-maps-redesign.png)
+![Flutter Google Maps Redesign](google-maps-redesign.png)
