@@ -249,7 +249,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     "1,243 Place",
                                     style: TextStyle(
                                         fontFamily: 'AirbnbCerealBook',
-                                        fontSize: 14,
+                                        fontSize: 13,
                                         color: Colors.white),
                                   ),
                                 ],
@@ -360,7 +360,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           "Burger House",
                                           style: TextStyle(
                                               fontFamily: 'AirbnbCerealBook',
-                                              fontSize: 14,
+                                              fontSize: 13,
                                               color: Colors.white),
                                         ),
                                       ],
@@ -375,13 +375,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                           starCount: 5,
                                           rating: 4,
                                           color: Color(0XFFFBBC05),
-                                          size: 14,
+                                          size: 13,
+                                          spacing: 3.6,
                                         ),
                                         Text(
                                           "295 Review",
                                           style: TextStyle(
                                               fontFamily: 'AirbnbCerealBook',
-                                              fontSize: 14,
+                                              fontSize: 13,
                                               color: Colors.white),
                                         ),
                                       ],
