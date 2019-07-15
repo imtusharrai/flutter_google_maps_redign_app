@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'detailpage.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white,
       ),
       home: MyHomePage(),
+      routes: <String, WidgetBuilder>{
+        '/detail-page' : (BuildContext context) => MyDetailPage(),
+      }
     );
   }
 }
@@ -191,7 +195,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(top: 28),
+                padding: EdgeInsets.only(top: 20, bottom: 20),
                 child: Text(
                   "Places by city",
                   style: TextStyle(
@@ -206,10 +210,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Row(
                   children: <Widget>[
                     Container(
-                      width: 300,
-                      height: 220,
+                      width: 315,
+                      height: 200,
+                      margin: EdgeInsets.only(right: 16.0),
                       child: Stack(
-                        fit: StackFit.expand,
                         children: <Widget>[
                           Image(
                             fit: BoxFit.cover,
@@ -219,9 +223,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             left: 0,
                             bottom: 0,
                             child: Container(
-                              width: 285,
-                              height: 110,
-                              margin: EdgeInsets.only(left: 8, bottom: 30),
+                              width: 315,
+                              height: 100,
+                              margin: EdgeInsets.only(bottom: 16),
                               padding: EdgeInsets.all(16),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(16),
@@ -260,10 +264,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     Container(
-                      width: 300,
-                      height: 220,
+                      width: 315,
+                      height: 200,
+                      margin: EdgeInsets.only(right: 16.0),
                       child: Stack(
-                        fit: StackFit.expand,
                         children: <Widget>[
                           Image(
                             fit: BoxFit.cover,
@@ -273,9 +277,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             left: 0,
                             bottom: 0,
                             child: Container(
-                              width: 285,
-                              height: 110,
-                              margin: EdgeInsets.only(left: 8, bottom: 30),
+                              width: 315,
+                              height: 100,
+                              margin: EdgeInsets.only(bottom: 16),
                               padding: EdgeInsets.all(16),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(16),
@@ -296,7 +300,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(),
+                padding: EdgeInsets.only(top: 20, bottom: 20),
                 child: Text(
                   "Places near you",
                   style: TextStyle(
@@ -310,94 +314,99 @@ class _MyHomePageState extends State<MyHomePage> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: <Widget>[
-                    Container(
-                      width: 300,
-                      height: 220,
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: <Widget>[
-                          Image(
-                            fit: BoxFit.cover,
-                            image: AssetImage('assets/image2.png'),
-                          ),
-                          Positioned(
-                            left: 0,
-                            bottom: 0,
-                            child: Container(
-                                width: 285,
-                                height: 110,
-                                margin: EdgeInsets.only(left: 8, bottom: 30),
-                                padding: EdgeInsets.all(16),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16),
-                                    gradient: LinearGradient(
-                                      begin: FractionalOffset.center,
-                                      end: FractionalOffset.bottomCenter,
-                                      colors: [
-                                        const Color(0XFF000000).withOpacity(.0),
-                                        const Color(0XFF000000)
-                                            .withOpacity(0.8),
-                                      ],
-                                    )),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        Text(
-                                          "Paranoi",
-                                          style: TextStyle(
-                                              fontFamily: 'AirbnbCerealBold',
-                                              fontSize: 28,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.white),
-                                        ),
-                                        Text(
-                                          "Burger House",
-                                          style: TextStyle(
-                                              fontFamily: 'AirbnbCerealBook',
-                                              fontSize: 13,
-                                              color: Colors.white),
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: <Widget>[
-                                        SmoothStarRating(
-                                          allowHalfRating: false,
-                                          starCount: 5,
-                                          rating: 4,
-                                          color: Color(0XFFFBBC05),
-                                          size: 13,
-                                          spacing: 3.6,
-                                        ),
-                                        Text(
-                                          "295 Review",
-                                          style: TextStyle(
-                                              fontFamily: 'AirbnbCerealBook',
-                                              fontSize: 13,
-                                              color: Colors.white),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                )),
-                          ),
-                        ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed('/detail-page');
+                      },
+                      child:  Container(
+                        width: 315,
+                        height: 200,
+                        margin: EdgeInsets.only(right: 16.0),
+                        child: Stack(
+                          children: <Widget>[
+                            Image(
+                              fit: BoxFit.cover,
+                              image: AssetImage('assets/image2.png'),
+                            ),
+                            Positioned(
+                              left: 0,
+                              bottom: 0,
+                              child: Container(
+                                  width: 315,
+                                  height: 100,
+                                  margin: EdgeInsets.only(bottom: 16),
+                                  padding: EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      gradient: LinearGradient(
+                                        begin: FractionalOffset.center,
+                                        end: FractionalOffset.bottomCenter,
+                                        colors: [
+                                          const Color(0XFF000000).withOpacity(.0),
+                                          const Color(0XFF000000)
+                                              .withOpacity(0.8),
+                                        ],
+                                      )),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        children: <Widget>[
+                                          Text(
+                                            "Paranoi",
+                                            style: TextStyle(
+                                                fontFamily: 'AirbnbCerealBold',
+                                                fontSize: 28,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white),
+                                          ),
+                                          Text(
+                                            "Burger House",
+                                            style: TextStyle(
+                                                fontFamily: 'AirbnbCerealBook',
+                                                fontSize: 13,
+                                                color: Colors.white),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.end,
+                                        children: <Widget>[
+                                          SmoothStarRating(
+                                            allowHalfRating: false,
+                                            starCount: 5,
+                                            rating: 4,
+                                            color: Color(0XFFFBBC05),
+                                            size: 13,
+                                            spacing: 3.6,
+                                          ),
+                                          Text(
+                                            "295 Review",
+                                            style: TextStyle(
+                                                fontFamily: 'AirbnbCerealBook',
+                                                fontSize: 13,
+                                                color: Colors.white),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  )),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Container(
-                      width: 300,
-                      height: 220,
+                      width: 315,
+                      height: 200,
+                      margin: EdgeInsets.only(right: 16.0),
                       child: Stack(
-                        fit: StackFit.expand,
                         children: <Widget>[
                           Image(
                             fit: BoxFit.cover,
@@ -407,9 +416,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             left: 0,
                             bottom: 0,
                             child: Container(
-                              width: 285,
-                              height: 110,
-                              margin: EdgeInsets.only(left: 8, bottom: 30),
+                              width: 315,
+                              height: 100,
+                              margin: EdgeInsets.only(bottom: 16),
                               padding: EdgeInsets.all(16),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(16),
@@ -426,6 +435,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                       ),
                     ),
+                    //
                   ],
                 ),
               ),
